@@ -7,6 +7,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.Optional;
 import java.util.UUID;
 
 
@@ -16,4 +17,7 @@ public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
     Page<Beer> findAllByBeerName(String beerName, Pageable pagable);
 
     Page<Beer> findAllByBeerStyle(BeerStyleEnum beerStyle, Pageable pagable);
+
+
+    Beer findByUpc(String beerUpc);
 }
